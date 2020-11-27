@@ -1,4 +1,3 @@
-import React from "react";
 import Colors from "../../helpers/Colors/Colors";
 import showColors from "../../helpers/Colors/showColors";
 import Buttons from "../Buttons/Buttons";
