@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useState } from "react";
 import "./assets/css/App.css";
-import "./assets/css/Button.css";
 import GameOverScreen from "./components/GameOverScreen";
 import Playground from "./components/Playground";
 import Colors from "./helpers/Colors/Colors";
@@ -46,6 +45,6 @@ const App: React.FC = () => {
 			)}
 		</div>
 	);
-}
+};
 
 export default App;

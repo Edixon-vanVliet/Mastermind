@@ -2,6 +2,7 @@ import React from "react";
 import Colors from "../../helpers/Colors/Colors";
 import showColors from "../../helpers/Colors/showColors";
 import "./GameOverScreen.css";
+import styledButton from "../Buttons/Buttons.module.css";
 
 export interface IGameOverScreenProps {
 	message: string;
@@ -20,7 +21,7 @@ const GameOverScreen: React.FC<IGameOverScreenProps> = React.memo(
 					</div>
 					<div>
 						<button
-							className="rebeccapurple"
+							className={styledButton.rebeccapurple}
 							onClick={() => window.location.reload()}
 						>
 							Play again

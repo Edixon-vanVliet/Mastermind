@@ -1,6 +1,6 @@
 import React from "react";
 import Colors from "../../helpers/Colors/Colors";
-import "./Buttons.css";
+import styledButton from "./Buttons.module.css";
 
 export interface IButtonsProps {
 	onClick: (color: Colors) => void;
@@ -8,23 +8,38 @@ export interface IButtonsProps {
 
 const Buttons: React.FC<IButtonsProps> = React.memo(({ onClick }) => {
 	return (
-		<section id="Buttons">
-			<button className="yellow" onClick={() => onClick(Colors.Yellow)}>
+		<section id={styledButton.Buttons}>
+			<button
+				className={styledButton.yellow}
+				onClick={() => onClick(Colors.Yellow)}
+			>
 				Yellow
 			</button>
-			<button className="green" onClick={() => onClick(Colors.Green)}>
+			<button
+				className={styledButton.green}
+				onClick={() => onClick(Colors.Green)}
+			>
 				Green
 			</button>
-			<button className="red" onClick={() => onClick(Colors.Red)}>
+			<button className={styledButton.red} onClick={() => onClick(Colors.Red)}>
 				Red
 			</button>
-			<button className="blue" onClick={() => onClick(Colors.Blue)}>
+			<button
+				className={styledButton.blue}
+				onClick={() => onClick(Colors.Blue)}
+			>
 				Blue
 			</button>
-			<button className="black" onClick={() => onClick(Colors.Black)}>
+			<button
+				className={styledButton.black}
+				onClick={() => onClick(Colors.Black)}
+			>
 				Black
 			</button>
-			<button className="white" onClick={() => onClick(Colors.White)}>
+			<button
+				className={styledButton.white}
+				onClick={() => onClick(Colors.White)}
+			>
 				White
 			</button>
 		</section>
