@@ -11,7 +11,7 @@ const correctHints: string = JSON.stringify(
 	Array(config.codeLength).fill(Colors.Red)
 );
 
-function App() {
+const App: React.FC = () => {
 	const [code, setCode] = useState<Colors[]>([]);
 	const [isGameOver, setIsGameOver] = useState(false);
 	const [status, setStatus] = useState("");

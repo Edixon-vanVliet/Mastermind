@@ -8,26 +8,28 @@ export interface IGameOverScreenProps {
 	code: Colors[];
 }
 
-const GameOverScreen = React.memo(({ message, code }: IGameOverScreenProps) => {
-	return (
-		<div id="GameOverScreen">
-			<div>
+const GameOverScreen: React.FC<IGameOverScreenProps> = React.memo(
+	({ message, code }) => {
+		return (
+			<div id="GameOverScreen">
 				<div>
-					<h1>{message}</h1>
-					<h2>The code was</h2>
-					<div id="code">{showColors(code)}</div>
-				</div>
-				<div>
-					<button
-						className="rebeccapurple"
-						onClick={() => window.location.reload()}
-					>
-						Play again
-					</button>
+					<div>
+						<h1>{message}</h1>
+						<h2>The code was</h2>
+						<div id="code">{showColors(code)}</div>
+					</div>
+					<div>
+						<button
+							className="rebeccapurple"
+							onClick={() => window.location.reload()}
+						>
+							Play again
+						</button>
+					</div>
 				</div>
 			</div>
-		</div>
-	);
-});
+		);
+	}
+);
 
 export default GameOverScreen;

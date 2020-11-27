@@ -10,12 +10,12 @@ export interface IPlaygroundProps {
 	gameOver: (message: string) => void;
 }
 
-const Playground = ({
+const Playground: React.FC<IPlaygroundProps> = ({
 	config,
 	code,
 	correctHints,
 	gameOver,
-}: IPlaygroundProps) => {
+}) => {
 	const [userInput, setUserInput] = useState<Colors[]>([]);
 	const [hints, setHints] = useState<Colors[]>([]);
 

@@ -9,11 +9,11 @@ export interface IPlagroundComponentProps {
 	onClick: (color: Colors) => void;
 }
 
-const PlayGroundComponent = ({
+const PlayGroundComponent: React.FC<IPlagroundComponentProps> = ({
 	onClick,
 	userInput,
 	hints,
-}: IPlagroundComponentProps) => {
+}) => {
 	return (
 		<section>
 			<Buttons onClick={onClick} />

@@ -6,7 +6,7 @@ export interface IButtonsProps {
 	onClick: (color: Colors) => void;
 }
 
-const Buttons = React.memo(({ onClick }: IButtonsProps) => {
+const Buttons: React.FC<IButtonsProps> = React.memo(({ onClick }) => {
 	return (
 		<section id="Buttons">
 			<button className="yellow" onClick={() => onClick(Colors.Yellow)}>
