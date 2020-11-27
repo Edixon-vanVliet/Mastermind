@@ -15,7 +15,9 @@ placed in the four holes covered by the shield, visible to the codemaker but not
 The codebreaker tries to guess the pattern, in both order and color. Each guess is made by placing a row
 of code pegs on the decoding board.
 Once placed, the codemaker provides feedback by placing 0‐4 key pegs in the small holes of the row
-with the guess. A black key peg is placed for each code peg from the guess which is correct in both color
+with the guess. A red key peg is placed for each code peg from the guess which is correct in both color
 and position. A white key peg indicates the existence of a correct color code peg placed in the wrong
 position.
-The order of these small B&W key pegs doesn't matter.
+
+
+![Example of game](/images/example.png)
