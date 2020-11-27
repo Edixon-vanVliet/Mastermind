@@ -2,6 +2,7 @@ import React from "react";
 import Colors from "../../helpers/Colors/Colors";
 import showColors from "../../helpers/Colors/showColors";
 import Buttons from "../Buttons/Buttons";
+import "./Playground.css";
 
 export interface IPlagroundComponentProps {
 	userInput: Colors[];
@@ -18,7 +19,7 @@ const PlayGroundComponent = ({
 		<section>
 			<Buttons onClick={onClick} />
 
-			<div style={{ display: "flex", justifyContent: "center" }}>
+			<div id="PlayGround">
 				<div id="userInputs">{showColors(userInput)}</div>
 				<div id="hints">{showColors(hints)}</div>
 			</div>
