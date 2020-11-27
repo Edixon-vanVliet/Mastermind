@@ -56,7 +56,7 @@ const Playground = ({
 		<PlayGroundComponent
 			userInput={userInput}
 			hints={hints}
-			onClick={() => handleClick}
+			onClick={handleClick}
 		/>
 	);
 };
