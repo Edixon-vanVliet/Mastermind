@@ -1,0 +1,13 @@
+#GameOverScreen {
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+#code {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 50px;
+}

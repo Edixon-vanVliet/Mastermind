@@ -1,0 +1,25 @@
+#userInputs {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: repeat(10, minmax(auto, 48px));
+}
+
+.color {
+	margin: 10px;
+	border-radius: 100%;
+	width: 24px;
+	height: 24px;
+	border: 1px solid #bbb;
+}
+
+#hints {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: repeat(20, minmax(auto, 24px));
+}
+
+#hints .color {
+	margin: 5px 10px;
+	height: 12px;
+	width: 12px;
+}
