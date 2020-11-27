@@ -19,5 +19,13 @@ with the guess. A red key peg is placed for each code peg from the guess which i
 and position. A white key peg indicates the existence of a correct color code peg placed in the wrong
 position.
 
+## Example of the game
 
 ![Example of game](/images/example.png)
+
+In the image above the big circles represents the guesses and the little dots represents the hints.
+
+Looking at the little dots you can see that the first one (red dot) is telling the user
+that the green guess is correct in both color and position. And the third dot (white dot)
+is telling the user that there is indeed a blue color in the code but is not in
+the correct position.
