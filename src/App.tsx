@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useState } from "react";
-import "./assets/css/App.css";
 import GameOverScreen from "./components/GameOverScreen";
 import Playground from "./components/Playground";
 import Colors from "./helpers/Colors/Colors";
