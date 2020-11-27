@@ -3,18 +3,20 @@ import Colors from "../../helpers/Colors/Colors";
 import showColors from "../../helpers/Colors/showColors";
 import Buttons from "../Buttons/Buttons";
 
-const PlayGroundComponent = (props: {
-	onClick: () => (arg0: Colors) => void;
+export interface IPlagroundComponentProps {
 	userInput: Colors[];
 	hints: Colors[];
-}) => {
+	onClick: () => (colors: Colors) => void;
+}
+
+const PlayGroundComponent = ({onClick, userInput, hints}: IPlagroundComponentProps) => {
 	return (
 		<section>
-			<Buttons onClick={props.onClick()} />
+			<Buttons onClick={onClick} />
 
 			<div style={{ display: "flex", justifyContent: "center" }}>
-				<div id="userInputs">{showColors(props.userInput)}</div>
-				<div id="hints">{showColors(props.hints)}</div>
+				<div id="userInputs">{showColors(userInput)}</div>
+				<div id="hints">{showColors(hints)}</div>
 			</div>
 		</section>
 	);
