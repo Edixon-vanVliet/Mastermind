@@ -5,9 +5,10 @@ codebreaker) tries to guess the code their opponent
 (the codemaker) comes up with. The game is played on
 a board with two kinds of pegs:
 
-Markup : 1. Big colorful pegs used by both players:
-to form the code, as well as for the guesses. 2. Small black and white pegs, used by the
-codemaker to give feedback to the codebreaker.
+1. Big colorful pegs used by both players:
+   to form the code, as well as for the guesses.
+2. Small black and white pegs, used by the
+   codemaker to give feedback to the codebreaker.
 
 The codemaker chooses a pattern of four code pegs (duplicates are allowed). The chosen pattern is
 placed in the four holes covered by the shield, visible to the codemaker but not to the codebreaker.
