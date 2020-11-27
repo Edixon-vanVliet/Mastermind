@@ -9,10 +9,8 @@ const checkGuesses = (
 	let newHints: number[] = [];
 
 	for (let i = 0; i < config.codeLength; i++) {
-		let color = code.find((color) => color === guesses[i]);
-
-		if (color) {
-			let indexes = getAllIndexes(code, color);
+		if (code.includes(guesses[i])) {
+			let indexes = getAllIndexes(code, guesses[i]);
 
 			if (indexes.find((index) => index === i)! >= 0) {
 				newHints.push(Colors.Red);
