@@ -6,10 +6,14 @@ import Buttons from "../Buttons/Buttons";
 export interface IPlagroundComponentProps {
 	userInput: Colors[];
 	hints: Colors[];
-	onClick: () => (colors: Colors) => void;
+	onClick: () => (color: Colors) => void;
 }
 
-const PlayGroundComponent = ({onClick, userInput, hints}: IPlagroundComponentProps) => {
+const PlayGroundComponent = ({
+	onClick,
+	userInput,
+	hints,
+}: IPlagroundComponentProps) => {
 	return (
 		<section>
 			<Buttons onClick={onClick} />
