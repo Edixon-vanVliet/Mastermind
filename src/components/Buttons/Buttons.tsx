@@ -1,37 +1,29 @@
 import Colors from "../../helpers/Colors/Colors";
 import "./Buttons.css";
 
-const Buttons = (props: { onClick: (arg0: Colors) => void; }) => {
+export interface IButtonsProps {
+	onClick: (color: Colors) => void;
+}
+
+const Buttons = ({ onClick }: IButtonsProps) => {
 	return (
 		<section id="Buttons">
-			<button
-				className="yellow"
-				onClick={() => props.onClick(Colors.Yellow)}
-			>
+			<button className="yellow" onClick={() => onClick(Colors.Yellow)}>
 				Yellow
 			</button>
-			<button
-				className="green"
-				onClick={() => props.onClick(Colors.Green)}
-			>
+			<button className="green" onClick={() => onClick(Colors.Green)}>
 				Green
 			</button>
-			<button className="red" onClick={() => props.onClick(Colors.Red)}>
+			<button className="red" onClick={() => onClick(Colors.Red)}>
 				Red
 			</button>
-			<button className="blue" onClick={() => props.onClick(Colors.Blue)}>
+			<button className="blue" onClick={() => onClick(Colors.Blue)}>
 				Blue
 			</button>
-			<button
-				className="black"
-				onClick={() => props.onClick(Colors.Black)}
-			>
+			<button className="black" onClick={() => onClick(Colors.Black)}>
 				Black
 			</button>
-			<button
-				className="white"
-				onClick={() => props.onClick(Colors.White)}
-			>
+			<button className="white" onClick={() => onClick(Colors.White)}>
 				White
 			</button>
 		</section>
