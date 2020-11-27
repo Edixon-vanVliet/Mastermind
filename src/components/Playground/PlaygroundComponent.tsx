@@ -1,7 +1,7 @@
 import Colors from "../../helpers/Colors/Colors";
 import showColors from "../../helpers/Colors/showColors";
 import Buttons from "../Buttons/Buttons";
-import "./Playground.css";
+import styledPlayground from "./Playground.module.css";
 
 export interface IPlagroundComponentProps {
 	userInput: Colors[];
@@ -18,9 +18,9 @@ const PlayGroundComponent: React.FC<IPlagroundComponentProps> = ({
 		<section>
 			<Buttons onClick={onClick} />
 
-			<div id="PlayGround">
-				<div id="userInputs">{showColors(userInput)}</div>
-				<div id="hints">{showColors(hints)}</div>
+			<div id={styledPlayground.PlayGround}>
+				<div id={styledPlayground.userInputs}>{showColors(userInput)}</div>
+				<div id={styledPlayground.hints}>{showColors(hints)}</div>
 			</div>
 		</section>
 	);

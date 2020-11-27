@@ -1,0 +1,34 @@
+#PlayGround {
+	display: flex;
+	justify-content: center;
+}
+
+#userInputs {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: repeat(10, minmax(auto, 48px));
+}
+
+#hints {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: repeat(20, minmax(auto, 24px));
+}
+
+#userInputs > div,
+#hints > div {
+	border-radius: 100%;
+	border: 1px solid #bbb;
+}
+
+#userInputs > div {
+	margin: 10px;
+	width: 24px;
+	height: 24px;
+}
+
+#hints > div {
+	margin: 5px 10px;
+	height: 12px;
+	width: 12px;
+}
