@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import checkGuesses from "../../helpers/checkGuesses";
 import Colors from "../../helpers/Colors/Colors";
 import PlayGroundComponent from "./PlaygroundComponent";
@@ -10,7 +10,12 @@ export interface IPlaygroundProps {
 	gameOver: (message: string) => void;
 }
 
-const Playground = ({config, code, correctHints, gameOver}: IPlaygroundProps) => {
+const Playground = ({
+	config,
+	code,
+	correctHints,
+	gameOver,
+}: IPlaygroundProps) => {
 	const [userInput, setUserInput] = useState<Colors[]>([]);
 	const [hints, setHints] = useState<Colors[]>([]);
 
@@ -25,11 +30,7 @@ const Playground = ({config, code, correctHints, gameOver}: IPlaygroundProps) =>
 				userInput.length - config.codeLength
 			);
 
-			let newHints = checkGuesses(
-				config,
-				code,
-				newColorsGuessed
-			);
+			let newHints = checkGuesses(config, code, newColorsGuessed);
 
 			setHints((prevHints) => [...prevHints, ...newHints]);
 		}
@@ -47,9 +48,9 @@ const Playground = ({config, code, correctHints, gameOver}: IPlaygroundProps) =>
 		}
 	}, [config, correctHints, gameOver, hints]);
 
-	const handleClick = (color: Colors) => {
-		setUserInput([...userInput, color]);
-	};
+	const handleClick = useCallback((color: Colors) => {
+		setUserInput((prevUserInput) => [...prevUserInput, color]);
+	}, []);
 
 	return (
 		<PlayGroundComponent
