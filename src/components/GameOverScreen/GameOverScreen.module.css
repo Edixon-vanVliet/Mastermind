@@ -11,3 +11,11 @@
 	justify-content: center;
 	margin-bottom: 50px;
 }
+
+#code > div {
+	border-radius: 100%;
+	border: 1px solid #bbb;
+	margin: 10px;
+	width: 24px;
+	height: 24px;
+}
