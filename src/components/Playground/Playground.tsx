@@ -3,12 +3,14 @@ import checkGuesses from "../../helpers/checkGuesses";
 import Colors from "../../helpers/Colors/Colors";
 import PlayGroundComponent from "./PlaygroundComponent";
 
-const Playground = (props: {
+export interface IPlaygroundProps {
 	config: configuration;
 	code: Colors[];
 	correctHints: string;
-	gameOver: (arg0: string) => void;
-}) => {
+	gameOver: (message: string) => void;
+}
+
+const Playground = ({config, code, correctHints, gameOver}: IPlaygroundProps) => {
 	const [userInput, setUserInput] = useState<Colors[]>([]);
 	const [hints, setHints] = useState<Colors[]>([]);
 
@@ -16,34 +18,34 @@ const Playground = (props: {
 	useEffect(() => {
 		if (
 			userInput.length !== 0 &&
-			userInput.length % props.config.codeLength === 0
+			userInput.length % config.codeLength === 0
 		) {
 			// last guesses of the user
 			const newColorsGuessed = userInput.slice(
-				userInput.length - props.config.codeLength
+				userInput.length - config.codeLength
 			);
 
 			let newHints = checkGuesses(
-				props.config,
-				props.code,
+				config,
+				code,
 				newColorsGuessed
 			);
 
 			setHints((prevHints) => [...prevHints, ...newHints]);
 		}
-	}, [props.code, props.config, userInput]);
+	}, [code, config, userInput]);
 
 	// End the game if the user guessed the code or ran out of guesses
 	useEffect(() => {
-		const lastHints = hints.slice(hints.length - props.config.codeLength);
-		const maxHintsLength = props.config.codeLength * props.config.attempts;
+		const lastHints = hints.slice(hints.length - config.codeLength);
+		const maxHintsLength = config.codeLength * config.attempts;
 
-		if (JSON.stringify(lastHints) === props.correctHints) {
-			props.gameOver("CONGRATULATIONS YOU DECRYPTED THE CODE");
+		if (JSON.stringify(lastHints) === correctHints) {
+			gameOver("CONGRATULATIONS YOU DECRYPTED THE CODE");
 		} else if (hints.length === maxHintsLength) {
-			props.gameOver("GAME OVER");
+			gameOver("GAME OVER");
 		}
-	}, [hints, props]);
+	}, [config, correctHints, gameOver, hints]);
 
 	const handleClick = (color: Colors) => {
 		setUserInput([...userInput, color]);
