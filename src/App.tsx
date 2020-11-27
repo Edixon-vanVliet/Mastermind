@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import "./assets/css/App.css";
 import "./assets/css/Button.css";
 import GameOverScreen from "./components/GameOverScreen";
@@ -27,10 +27,10 @@ function App() {
 		setCode(newCode);
 	}, []);
 
-	const handleGameOver = (message: string) => {
+	const handleGameOver = useCallback((message: string) => {
 		setIsGameOver(true);
 		setStatus(message);
-	};
+	}, []);
 
 	return (
 		<div className="App">
