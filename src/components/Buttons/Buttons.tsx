@@ -1,3 +1,4 @@
+import React from "react";
 import Colors from "../../helpers/Colors/Colors";
 import "./Buttons.css";
 
@@ -5,7 +6,7 @@ export interface IButtonsProps {
 	onClick: (color: Colors) => void;
 }
 
-const Buttons = ({ onClick }: IButtonsProps) => {
+const Buttons = React.memo(({ onClick }: IButtonsProps) => {
 	return (
 		<section id="Buttons">
 			<button className="yellow" onClick={() => onClick(Colors.Yellow)}>
@@ -28,6 +29,6 @@ const Buttons = ({ onClick }: IButtonsProps) => {
 			</button>
 		</section>
 	);
-};
+});
 
 export default Buttons;
