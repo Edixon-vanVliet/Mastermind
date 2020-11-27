@@ -1,3 +1,9 @@
+#Buttons {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: center;
+}
+
 button:focus {
 	outline: none;
 }
